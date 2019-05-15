@@ -55,7 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Datos.cs" />
+    <Compile Include="Clases.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

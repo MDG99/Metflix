@@ -44,11 +44,6 @@ namespace Meflix
             ContadorContraseña++;
         }
 
-        private void txtCrearCuenta_Click(object sender, EventArgs e)
-        {
-            //Aquí se va a poner la creación de una nueva cuenta
-        }
-
         private void btmIniciarSesión_Click(object sender, EventArgs e)
         {
             List<Usuario> Usuarios = new List<Usuario>();
@@ -88,6 +83,13 @@ namespace Meflix
                 txtUsuario.Text = "Usuario";
                 ContadorUsuario = 0;
             }
-        }        
+        }
+
+        private void txtCrearCuenta_Click(object sender, EventArgs e)
+        {
+            UsuarioAlta usuarioAlta = new UsuarioAlta();
+            usuarioAlta.Show();
+            Close();
+        }
     }
 }

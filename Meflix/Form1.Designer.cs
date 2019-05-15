@@ -60,7 +60,6 @@
             transparentControl1.Text = "transparentControl1";
             transparentControl1.Transparent = true;
             transparentControl1.TransparentColor = System.Drawing.SystemColors.Desktop;
-            transparentControl1.Click += new System.EventHandler(this.txtCrearCuenta_Click);
             // 
             // txtCrearCuenta
             // 
@@ -73,7 +72,7 @@
             this.txtCrearCuenta.Size = new System.Drawing.Size(98, 13);
             this.txtCrearCuenta.TabIndex = 5;
             this.txtCrearCuenta.Text = "Crear cuenta ahora";
-            this.txtCrearCuenta.Click += new System.EventHandler(this.txtContraseña_TextChanged);
+            this.txtCrearCuenta.Click += new System.EventHandler(this.txtCrearCuenta_Click);
             // 
             // label1
             // 

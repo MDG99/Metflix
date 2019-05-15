@@ -29,6 +29,17 @@ namespace SQLiteDb
             }
             return usuarios;
         }
+
+        public void AddUser(string name, string lastname, string username, string password, bool membresia)
+        {
+            int membresia_id;
+            if (membresia) membresia_id = 0; //basica
+            else membresia_id = 1; //premium
+
+            using (SQLiteRecordSet rs = ExecuteQuery($"INSERT INTO usuarios(id, name, lastname, username, password, " +
+                $"membresia_id) VALUES ({GetUsuarios().Count()}, '{name}', '{lastname}', '{username}', '{password}'," +
+                $"'{membresia_id}')")) { }
+        }
     }
 
 
