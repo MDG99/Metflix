@@ -13,10 +13,10 @@ namespace Meflix
         public string Password { get; }
         public string Name { get; }
         public string LastName { get; }
-        public string MembresiaId { get; }
+        public int MembresiaId { get; }
         public string FullName { get { return Name + " " + LastName; } }
 
-        public Usuario(int id, string userName, string password, string name, string lastName, string membresiaId)
+        public Usuario(int id, string userName, string password, string name, string lastName, int membresiaId)
         {
             Id = id;
             UserName = userName;

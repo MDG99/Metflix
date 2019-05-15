@@ -19,7 +19,12 @@ namespace SQLiteDb
             {
                 while (rs.NextRecord())
                 {
-
+                    usuarios.Add(new Usuario(rs.GetInt32("id"),
+                        rs.GetString("username"),
+                        rs.GetString("password"),
+                        rs.GetString("name"),
+                        rs.GetString("lastname"),
+                        rs.GetInt32("membresia_id")));
                 }
             }
             return usuarios;

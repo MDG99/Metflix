@@ -51,23 +51,43 @@ namespace Meflix
 
         private void btmIniciarSesión_Click(object sender, EventArgs e)
         {
-            //List<Usuario> Usuarios = new List<Usuario>();
-            //Usuarios = conn.GetUsuarios();
-            //if (Usuarios.Exists(U => U.UserName == txtUsuario.Text))
-            //{
-            //    if (Usuarios.Find(C => C.UserName == txtUsuario.Text).Password == txtContraseña.Text)
-            //    {
-            //        Usuario UsuarioActual = Usuarios.Find(C => C.UserName == txtUsuario.Text);
-            //    }
-            //    else
-            //    {
-            //        //Colocar Usuario o contraseña incorrectos
-            //    }
-            //}
-            //else
-            //{
-            //    //Colocar Usuario o contraseña incorrectos
-            //}
+            List<Usuario> Usuarios = new List<Usuario>();
+            Usuarios = conn.GetUsuarios();
+            if (Usuarios.Exists(U => U.UserName == txtUsuario.Text))
+            {
+                if (Usuarios.Find(C => C.UserName == txtUsuario.Text).Password == txtContraseña.Text)
+                {
+                    Usuario UsuarioActual = Usuarios.Find(C => C.UserName == txtUsuario.Text);
+                    var resultadoCorrecto = MessageBox.Show("Logueado con Éxito",
+                        "Inicio de sesión",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    var resultadoIncorrecto = MessageBox.Show("Usuario o contraseña incorrectos\nIntente de nuevo",
+                        "Inicio de sesión",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    //Retornando al estado inicial a los campos de usuario y contraseña
+                    txtContraseña.Text = "Contraseña";
+                    ContadorContraseña = 0;
+                    txtUsuario.Text = "Usuario";
+                    ContadorUsuario = 0;
+                }
+            }
+            else
+            {
+                var resultadoIncorrecto = MessageBox.Show("Usuario o contraseña incorrectos\nIntente de nuevo",
+                    "Inicio de sesión",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                //Retornando al estado inicial a los campos de usuario y contraseña
+                txtContraseña.Text = "Contraseña";
+                ContadorContraseña = 0;
+                txtUsuario.Text = "Usuario";
+                ContadorUsuario = 0;
+            }
         }        
     }
 }
