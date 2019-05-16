@@ -24,8 +24,22 @@ namespace Meflix
 
         private void btmCrear_Click(object sender, EventArgs e)
         {
+            bool duracion = false;
+            string Duracion = " ";
+            foreach (Control control in groupBox1.Controls)
+            {
+                if(control is RadioButton)
+                {
+                    RadioButton radioButton = control as RadioButton;
+                    if (radioButton.Checked)
+                    {
+                        duracion = true;
+                        Duracion = radioButton.Name;
+                    }
+                }
+            }
             if(txtNombre.Text == null || txtApellido.Text == null || txtUserName.Text == null ||
-                txtPassword.Text == null || (RbtmBasico.Checked == false && RbtmPremium.Checked == false))
+                txtPassword.Text == null || (RbtmBasico.Checked == false && RbtmPremium.Checked == false)||!duracion)
             {
                 MessageBox.Show("Es necesario que rellene todos los campo" +
                     "\nPor favor, regresa y llena lo solicitado", "Creación de Usuario", MessageBoxButtons.OK,
@@ -46,7 +60,7 @@ namespace Meflix
                 {
                     Usuarios.Clear();
                     bool membresia = RbtmBasico.Checked ? true : false;
-                    conn.AddUser(txtNombre.Text, txtApellido.Text, txtUserName.Text, txtPassword.Text, membresia);
+                    conn.AddUser(txtNombre.Text, txtApellido.Text, txtUserName.Text, txtPassword.Text, membresia, Duracion);
                     MessageBox.Show("Usuario creado con éxito",
                         "Creación de Usuario", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);

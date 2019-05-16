@@ -9,4 +9,6 @@ suceda lo mismo que cuando presionas el botón de iniciar sesión
 de "Contraseña" en lugar de caracteres tipo password ("*"). La única solución que he encontrado
 es reiniciar la aplicación entera.
 
-Actualizar la tabla de membresia, no incluye ciertos datos que debería
+Ver que onda con el Id numérico de usuarios, ¿qué pasa si se borra un usuario?
+Decidir que le va a pasar a un usuario que acaba de crear una cuenta, ¿regresará al inicio
+de sesión o ingresará directamente?
