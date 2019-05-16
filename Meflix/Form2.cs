@@ -63,7 +63,10 @@ namespace Meflix
                     conn.AddUser(txtNombre.Text, txtApellido.Text, txtUserName.Text, txtPassword.Text, membresia, Duracion);
                     MessageBox.Show("Usuario creado con éxito",
                         "Creación de Usuario", MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
+                        MessageBoxIcon.Information);
+                    InicioSesión inicio = new InicioSesión();
+                    inicio.Show();
+                    Close();
                 }
             }
         }

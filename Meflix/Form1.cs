@@ -86,25 +86,6 @@ namespace Meflix
         }
 
         private void txtCrearCuenta_Click(object sender, EventArgs e)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
         {
             UsuarioAlta usuarioAlta = new UsuarioAlta();
             usuarioAlta.Show();

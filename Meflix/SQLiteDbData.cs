@@ -33,15 +33,20 @@ namespace SQLiteDb
         public void AddUser(string name, string lastname, string username, string password, bool membresia, string duracion)
         {
             int membresia_id;
+            int expiracion;
             if (membresia) membresia_id = 0; //basica
             else membresia_id = 1; //premium
-
+            //Guardar fechas como YY/MM/DD
+            if(duracion == "Rbtm1Mes")
+            {
+                expiracion = 200;
+            }
             //Agregar dos métodos, uno para calcular el tiempo de expiracion y otro para saber el tiempo que estas contratando
             //ver como guardar el tiempo
 
             using (SQLiteRecordSet rs = ExecuteQuery($"INSERT INTO usuarios(id, name, lastname, username, password, " +
-                $"membresia_id) VALUES ({GetUsuarios().Count()}, '{name}', '{lastname}', '{username}', '{password}'," +
-                $"'{membresia_id}')")) { }
+                $"membresia_id, expiracion) VALUES ({GetUsuarios().Count()}, '{name}', '{lastname}', '{username}', '{password}'," +
+                $"'{membresia_id}',{2})")) { }
         }
     }
 

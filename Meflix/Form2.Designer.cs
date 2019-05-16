@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             TransControl_src.TransparentControl transparentControl1;
+            System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label label3;
@@ -36,7 +37,12 @@
             System.Windows.Forms.Label label1;
             System.Windows.Forms.PictureBox pictureBox1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuarioAlta));
-            System.Windows.Forms.Label label6;
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Rbtm1Year = new System.Windows.Forms.RadioButton();
+            this.Rbtm9Meses = new System.Windows.Forms.RadioButton();
+            this.Rbtm6Meses = new System.Windows.Forms.RadioButton();
+            this.Rbtm3Meses = new System.Windows.Forms.RadioButton();
+            this.Rbtm1Mes = new System.Windows.Forms.RadioButton();
             this.RbtmPremium = new System.Windows.Forms.RadioButton();
             this.RbtmBasico = new System.Windows.Forms.RadioButton();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -44,23 +50,17 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Rbtm1Mes = new System.Windows.Forms.RadioButton();
-            this.Rbtm3Meses = new System.Windows.Forms.RadioButton();
-            this.Rbtm6Meses = new System.Windows.Forms.RadioButton();
-            this.Rbtm9Meses = new System.Windows.Forms.RadioButton();
-            this.Rbtm1Year = new System.Windows.Forms.RadioButton();
             transparentControl1 = new TransControl_src.TransparentControl();
+            label6 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
-            label6 = new System.Windows.Forms.Label();
             transparentControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // transparentControl1
@@ -89,6 +89,92 @@
             transparentControl1.Text = "transparentControl1";
             transparentControl1.Transparent = true;
             transparentControl1.TransparentColor = System.Drawing.SystemColors.Desktop;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Rbtm1Year);
+            this.groupBox1.Controls.Add(this.Rbtm9Meses);
+            this.groupBox1.Controls.Add(this.Rbtm6Meses);
+            this.groupBox1.Controls.Add(this.Rbtm3Meses);
+            this.groupBox1.Controls.Add(this.Rbtm1Mes);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Location = new System.Drawing.Point(111, 293);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(266, 70);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // Rbtm1Year
+            // 
+            this.Rbtm1Year.AutoSize = true;
+            this.Rbtm1Year.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rbtm1Year.ForeColor = System.Drawing.SystemColors.Control;
+            this.Rbtm1Year.Location = new System.Drawing.Point(148, 40);
+            this.Rbtm1Year.Name = "Rbtm1Year";
+            this.Rbtm1Year.Size = new System.Drawing.Size(67, 24);
+            this.Rbtm1Year.TabIndex = 11;
+            this.Rbtm1Year.Text = "1 Año";
+            this.Rbtm1Year.UseVisualStyleBackColor = true;
+            // 
+            // Rbtm9Meses
+            // 
+            this.Rbtm9Meses.AutoSize = true;
+            this.Rbtm9Meses.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rbtm9Meses.ForeColor = System.Drawing.SystemColors.Control;
+            this.Rbtm9Meses.Location = new System.Drawing.Point(44, 40);
+            this.Rbtm9Meses.Name = "Rbtm9Meses";
+            this.Rbtm9Meses.Size = new System.Drawing.Size(84, 24);
+            this.Rbtm9Meses.TabIndex = 10;
+            this.Rbtm9Meses.Text = "9 meses";
+            this.Rbtm9Meses.UseVisualStyleBackColor = true;
+            // 
+            // Rbtm6Meses
+            // 
+            this.Rbtm6Meses.AutoSize = true;
+            this.Rbtm6Meses.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rbtm6Meses.ForeColor = System.Drawing.SystemColors.Control;
+            this.Rbtm6Meses.Location = new System.Drawing.Point(176, 13);
+            this.Rbtm6Meses.Name = "Rbtm6Meses";
+            this.Rbtm6Meses.Size = new System.Drawing.Size(84, 24);
+            this.Rbtm6Meses.TabIndex = 9;
+            this.Rbtm6Meses.Text = "6 meses";
+            this.Rbtm6Meses.UseVisualStyleBackColor = true;
+            // 
+            // Rbtm3Meses
+            // 
+            this.Rbtm3Meses.AutoSize = true;
+            this.Rbtm3Meses.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rbtm3Meses.ForeColor = System.Drawing.SystemColors.Control;
+            this.Rbtm3Meses.Location = new System.Drawing.Point(81, 13);
+            this.Rbtm3Meses.Name = "Rbtm3Meses";
+            this.Rbtm3Meses.Size = new System.Drawing.Size(84, 24);
+            this.Rbtm3Meses.TabIndex = 8;
+            this.Rbtm3Meses.Text = "3 meses";
+            this.Rbtm3Meses.UseVisualStyleBackColor = true;
+            // 
+            // Rbtm1Mes
+            // 
+            this.Rbtm1Mes.AutoSize = true;
+            this.Rbtm1Mes.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rbtm1Mes.ForeColor = System.Drawing.SystemColors.Control;
+            this.Rbtm1Mes.Location = new System.Drawing.Point(6, 13);
+            this.Rbtm1Mes.Name = "Rbtm1Mes";
+            this.Rbtm1Mes.Size = new System.Drawing.Size(69, 24);
+            this.Rbtm1Mes.TabIndex = 7;
+            this.Rbtm1Mes.Text = "1 mes";
+            this.Rbtm1Mes.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            label6.Location = new System.Drawing.Point(21, 308);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(84, 22);
+            label6.TabIndex = 13;
+            label6.Text = "Duración:";
             // 
             // label5
             // 
@@ -241,93 +327,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            label6.Location = new System.Drawing.Point(21, 308);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(84, 22);
-            label6.TabIndex = 13;
-            label6.Text = "Duración:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.Rbtm1Year);
-            this.groupBox1.Controls.Add(this.Rbtm9Meses);
-            this.groupBox1.Controls.Add(this.Rbtm6Meses);
-            this.groupBox1.Controls.Add(this.Rbtm3Meses);
-            this.groupBox1.Controls.Add(this.Rbtm1Mes);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(111, 293);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(266, 70);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            this.groupBox1.Visible = false;
-            // 
-            // Rbtm1Mes
-            // 
-            this.Rbtm1Mes.AutoSize = true;
-            this.Rbtm1Mes.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rbtm1Mes.ForeColor = System.Drawing.SystemColors.Control;
-            this.Rbtm1Mes.Location = new System.Drawing.Point(6, 13);
-            this.Rbtm1Mes.Name = "Rbtm1Mes";
-            this.Rbtm1Mes.Size = new System.Drawing.Size(69, 24);
-            this.Rbtm1Mes.TabIndex = 7;
-            this.Rbtm1Mes.Text = "1 mes";
-            this.Rbtm1Mes.UseVisualStyleBackColor = true;
-            // 
-            // Rbtm3Meses
-            // 
-            this.Rbtm3Meses.AutoSize = true;
-            this.Rbtm3Meses.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rbtm3Meses.ForeColor = System.Drawing.SystemColors.Control;
-            this.Rbtm3Meses.Location = new System.Drawing.Point(81, 13);
-            this.Rbtm3Meses.Name = "Rbtm3Meses";
-            this.Rbtm3Meses.Size = new System.Drawing.Size(84, 24);
-            this.Rbtm3Meses.TabIndex = 8;
-            this.Rbtm3Meses.Text = "3 meses";
-            this.Rbtm3Meses.UseVisualStyleBackColor = true;
-            // 
-            // Rbtm6Meses
-            // 
-            this.Rbtm6Meses.AutoSize = true;
-            this.Rbtm6Meses.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rbtm6Meses.ForeColor = System.Drawing.SystemColors.Control;
-            this.Rbtm6Meses.Location = new System.Drawing.Point(176, 13);
-            this.Rbtm6Meses.Name = "Rbtm6Meses";
-            this.Rbtm6Meses.Size = new System.Drawing.Size(84, 24);
-            this.Rbtm6Meses.TabIndex = 9;
-            this.Rbtm6Meses.Text = "6 meses";
-            this.Rbtm6Meses.UseVisualStyleBackColor = true;
-            // 
-            // Rbtm9Meses
-            // 
-            this.Rbtm9Meses.AutoSize = true;
-            this.Rbtm9Meses.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rbtm9Meses.ForeColor = System.Drawing.SystemColors.Control;
-            this.Rbtm9Meses.Location = new System.Drawing.Point(44, 40);
-            this.Rbtm9Meses.Name = "Rbtm9Meses";
-            this.Rbtm9Meses.Size = new System.Drawing.Size(84, 24);
-            this.Rbtm9Meses.TabIndex = 10;
-            this.Rbtm9Meses.Text = "9 meses";
-            this.Rbtm9Meses.UseVisualStyleBackColor = true;
-            // 
-            // Rbtm1Year
-            // 
-            this.Rbtm1Year.AutoSize = true;
-            this.Rbtm1Year.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rbtm1Year.ForeColor = System.Drawing.SystemColors.Control;
-            this.Rbtm1Year.Location = new System.Drawing.Point(148, 40);
-            this.Rbtm1Year.Name = "Rbtm1Year";
-            this.Rbtm1Year.Size = new System.Drawing.Size(67, 24);
-            this.Rbtm1Year.TabIndex = 11;
-            this.Rbtm1Year.Text = "1 Año";
-            this.Rbtm1Year.UseVisualStyleBackColor = true;
-            // 
             // UsuarioAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,9 +342,9 @@
             this.Text = "Métflix.- Agregar usuario";
             transparentControl1.ResumeLayout(false);
             transparentControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
