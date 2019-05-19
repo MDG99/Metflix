@@ -26,7 +26,7 @@ namespace Meflix
         {
             bool duracion = false;
             string Duracion = " ";
-            foreach (Control control in groupBox1.Controls)
+            foreach (Control control in panel1.Controls)
             {
                 if(control is RadioButton)
                 {
@@ -59,8 +59,7 @@ namespace Meflix
                 else
                 {
                     Usuarios.Clear();
-                    bool membresia = RbtmBasico.Checked ? true : false;
-                    conn.AddUser(txtNombre.Text, txtApellido.Text, txtUserName.Text, txtPassword.Text, membresia, Duracion);
+                    conn.AddUser(txtNombre.Text, txtApellido.Text, txtUserName.Text, txtPassword.Text, duracion, Duracion);
                     MessageBox.Show("Usuario creado con éxito",
                         "Creación de Usuario", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);

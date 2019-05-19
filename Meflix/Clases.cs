@@ -26,4 +26,30 @@ namespace Meflix
             MembresiaId = membresiaId;
         }
     }
+
+    public sealed class Pelicula
+    {
+        public int Codigo { get; }
+        public string Titulo { get; }
+        public string Genero { get; }
+        public int Year { get; }
+        public string Sinopsis { get; }
+        public string Clasificacion { get; }
+        public int Duracion { get; }
+        public string Imagen { get; }
+
+        public Pelicula(int codigo, string titulo,
+            string genero, int year, string sinopsis, 
+            string clasificacion, int duracion, string imagen)
+        {
+            Codigo = codigo;
+            Titulo = titulo;
+            Genero = genero;
+            Year = year;
+            Sinopsis = sinopsis;
+            Clasificacion = clasificacion;
+            Duracion = duracion;
+            Imagen = imagen;
+        }
+    }
 }

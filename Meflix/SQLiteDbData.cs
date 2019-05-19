@@ -33,21 +33,72 @@ namespace SQLiteDb
         public void AddUser(string name, string lastname, string username, string password, bool membresia, string duracion)
         {
             int membresia_id;
-            int expiracion;
+            DateTime Hoy = DateTime.Today;
+
             if (membresia) membresia_id = 0; //basica
             else membresia_id = 1; //premium
-            //Guardar fechas como YY/MM/DD
-            if(duracion == "Rbtm1Mes")
+
+            if (duracion == "Rbtm1Mes")
             {
-                expiracion = 200;
+                Hoy.AddMonths(1);
             }
-            //Agregar dos métodos, uno para calcular el tiempo de expiracion y otro para saber el tiempo que estas contratando
-            //ver como guardar el tiempo
+            if (duracion == "Rbtm3Meses")
+            {
+                Hoy.AddMonths(3);
+            }
+            if (duracion == "Rbtm6Meses")
+            {
+                Hoy.AddMonths(6);
+            }
+            if (duracion == "Rbtm9Meses")
+            {
+                Hoy.AddMonths(9);
+            }
+            if (duracion == "Rbtm1Year")
+            {
+                Hoy.AddMonths(12);
+            }
+
 
             using (SQLiteRecordSet rs = ExecuteQuery($"INSERT INTO usuarios(id, name, lastname, username, password, " +
                 $"membresia_id, expiracion) VALUES ({GetUsuarios().Count()}, '{name}', '{lastname}', '{username}', '{password}'," +
-                $"'{membresia_id}',{2})")) { }
+                $"'{membresia_id}','{Hoy.ToString("yyyy-MM-dd")}')")) { }
         }
+
+        public List<Pelicula> GetPeliculasVistas (int UsuarioId)
+        {
+            List<Pelicula> PeliculasVistas = new List<Pelicula>();
+
+            using (SQLiteRecordSet rs2 = ExecuteQuery($"SELECT pv.codigo AS codigo, pv.titulo AS titulo, pv.sinopsis AS sinopsis, " +
+                $"g.descripcion AS genero, pv.clasificacion AS clasificacion, " +
+                $"pv.duracion AS duracion, pv.imagen AS imagen, pv.year AS year " +
+                $"FROM generos g " +
+                $"INNER JOIN(" +
+                $"      SELECT p.codigo AS codigo, p.titulo AS titulo, p.sinopsis AS sinopsis, " +
+                $"      p.genero_id AS genero_id, p.clasificacion AS clasificacion, " +
+                $"      p.duracion AS duracion, p.imagen AS imagen, p.year AS year " +
+                $"      FROM peliculas p " +
+                $"      INNER JOIN( " +
+                $"              SELECT * FROM registro_peliculas rs WHERE rs.usuario_id = {UsuarioId}" +
+                $"              ) rs ON(rs.pelicula_codigo = p.codigo)" +
+                $"      ) pv ON(pv.genero_id = g.id)"))
+            {
+                while (rs2.NextRecord())
+                {
+                    PeliculasVistas.Add(new Pelicula(rs2.GetInt32("codigo"),
+                        rs2.GetString("titulo"),
+                        rs2.GetString("genero"),
+                        rs2.GetInt32("year"),
+                        rs2.GetString("sinopsis"),
+                        rs2.GetString("clasificacion"),
+                        rs2.GetInt32("duracion"),
+                        rs2.GetString("imagen")));
+                }
+            }
+            return PeliculasVistas;
+        }
+
+
     }
 
 

@@ -13,7 +13,6 @@ C:\Users\Sandra\imk4-2019-poo-a\Meflix\Meflix\bin\Debug\System.Data.SQLite.dll
 C:\Users\Sandra\Source\Repos\Metflix\Meflix\bin\Debug\Meflix.exe.config
 C:\Users\Sandra\Source\Repos\Metflix\Meflix\bin\Debug\Meflix.exe
 C:\Users\Sandra\Source\Repos\Metflix\Meflix\bin\Debug\Meflix.pdb
-C:\Users\Sandra\Source\Repos\Metflix\Meflix\obj\Debug\Meflix.csprojResolveAssemblyReference.cache
 C:\Users\Sandra\Source\Repos\Metflix\Meflix\obj\Debug\Meflix.InicioSesión.resources
 C:\Users\Sandra\Source\Repos\Metflix\Meflix\obj\Debug\Meflix.Properties.Resources.resources
 C:\Users\Sandra\Source\Repos\Metflix\Meflix\obj\Debug\Meflix.csproj.GenerateResource.Cache
@@ -21,3 +20,7 @@ C:\Users\Sandra\Source\Repos\Metflix\Meflix\obj\Debug\Meflix.csproj.CoreCompileI
 C:\Users\Sandra\Source\Repos\Metflix\Meflix\obj\Debug\Meflix.exe
 C:\Users\Sandra\Source\Repos\Metflix\Meflix\obj\Debug\Meflix.pdb
 C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.UsuarioAlta.resources
+C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.Metflix.resources
+C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.MetflixPantallaPrincipal.resources
+C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.UCPeliculas.resources
+C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.csprojResolveAssemblyReference.cache

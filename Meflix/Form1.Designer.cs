@@ -109,9 +109,8 @@
             this.txtContraseña.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txtContraseña.Location = new System.Drawing.Point(22, 140);
             this.txtContraseña.MaxLength = 16;
-            this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(208, 29);
+            this.txtContraseña.Size = new System.Drawing.Size(208, 27);
             this.txtContraseña.TabIndex = 2;
             this.txtContraseña.Text = "Contraseña";
             this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
@@ -123,9 +122,8 @@
             this.txtUsuario.Font = new System.Drawing.Font("Open Sans Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txtUsuario.Location = new System.Drawing.Point(22, 84);
-            this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(208, 29);
+            this.txtUsuario.Size = new System.Drawing.Size(208, 27);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.Text = "Usuario";
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);

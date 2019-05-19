@@ -57,6 +57,10 @@ namespace Meflix
                         "Inicio de sesión",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+
+                    MetflixPantallaPrincipal principal = new MetflixPantallaPrincipal(UsuarioActual);
+                    principal.Show();
+                    Close();
                 }
                 else
                 {
