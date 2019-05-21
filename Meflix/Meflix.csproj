@@ -55,6 +55,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda.Designer.cs">
+      <DependentUpon>Busqueda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -68,17 +74,23 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="MetflixInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="MetflixInicio.Designer.cs">
+      <DependentUpon>MetflixInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="MetflixPantallaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MetflixPantallaPrincipal.Designer.cs">
       <DependentUpon>MetflixPantallaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MetflixTodasLasPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetflixTodasLasPeliculas.Designer.cs">
+      <DependentUpon>MetflixTodasLasPeliculas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,17 +102,23 @@
     <Compile Include="UCPeliculas.Designer.cs">
       <DependentUpon>UCPeliculas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Busqueda.resx">
+      <DependentUpon>Busqueda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="MetflixInicio.resx">
+      <DependentUpon>MetflixInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MetflixPantallaPrincipal.resx">
       <DependentUpon>MetflixPantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MetflixTodasLasPeliculas.resx">
+      <DependentUpon>MetflixTodasLasPeliculas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

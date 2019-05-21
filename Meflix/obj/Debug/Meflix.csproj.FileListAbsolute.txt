@@ -20,7 +20,9 @@ C:\Users\Sandra\Source\Repos\Metflix\Meflix\obj\Debug\Meflix.csproj.CoreCompileI
 C:\Users\Sandra\Source\Repos\Metflix\Meflix\obj\Debug\Meflix.exe
 C:\Users\Sandra\Source\Repos\Metflix\Meflix\obj\Debug\Meflix.pdb
 C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.UsuarioAlta.resources
-C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.Metflix.resources
 C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.MetflixPantallaPrincipal.resources
 C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.UCPeliculas.resources
+C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.MetflixInicio.resources
+C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.MetflixTodasLasPeliculas.resources
+C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.Busqueda.resources
 C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.csprojResolveAssemblyReference.cache

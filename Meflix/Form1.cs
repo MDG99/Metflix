@@ -18,6 +18,8 @@ namespace Meflix
 
         int ContadorContraseña = 0;
         int ContadorUsuario = 0;
+        bool Cerrar = true;
+
 
         public InicioSesión()
         {
@@ -48,6 +50,7 @@ namespace Meflix
         {
             List<Usuario> Usuarios = new List<Usuario>();
             Usuarios = conn.GetUsuarios();
+
             if (Usuarios.Exists(U => U.UserName == txtUsuario.Text))
             {
                 if (Usuarios.Find(C => C.UserName == txtUsuario.Text).Password == txtContraseña.Text)
@@ -60,6 +63,7 @@ namespace Meflix
 
                     MetflixPantallaPrincipal principal = new MetflixPantallaPrincipal(UsuarioActual);
                     principal.Show();
+                    Cerrar = false;
                     Close();
                 }
                 else
@@ -94,6 +98,12 @@ namespace Meflix
             UsuarioAlta usuarioAlta = new UsuarioAlta();
             usuarioAlta.Show();
             Close();
+        }
+
+        private void InicioSesión_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(Cerrar)
+            Application.Exit();
         }
     }
 }

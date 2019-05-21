@@ -698,7 +698,7 @@
         mOvIG45DkPTH/9k=
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btmPlay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAYpJREFUSEut
         1Q1RxEAMBeBKQAISkIAEJOAAJOAAHIADzgE4AAfgABxAvk7TKb2m3d7wZt5Mr0leNj/b6zZwHrwJvgQ/
@@ -710,7 +710,7 @@
         SeUTw2xFku9Rz1sgyJranvxMY95+thXhrvsFMDCa88ZZYHIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btmReanudarPlay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAYVJREFUSEu1
         1QFRA0EMBdBKQAISkIAEJOAAHIADcABOwAE4AAfgAPJu+jvX7e1drwx/5s9cs8nPbpLtbhZwXrwpvhQ/

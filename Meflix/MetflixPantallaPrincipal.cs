@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SQLiteDb;
-using System.Web.UI.Design.WebControls;
 
 namespace Meflix
 {
@@ -16,6 +15,7 @@ namespace Meflix
     {
         public Usuario UsuarioActual { get; }
         private SQLiteConn conn = new SQLiteConn("Metflix.db", true);
+        bool Cerrar = true;
 
         public MetflixPantallaPrincipal(Usuario usuarioActual)
         {
@@ -24,46 +24,52 @@ namespace Meflix
 
         }
 
-        private void MetflixPantallaPrincipal_Load(object sender, EventArgs e)
+        private void AbrirForma(object forma)
         {
-            Items();
+            if (panelForms.Controls.Count > 0)
+                panelForms.Controls.RemoveAt(0);
+            Form form = forma as Form;
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            panelForms.Controls.Add(form);
+            panelForms.Tag = form;
+            form.Show();
         }
 
-        private void Items()
+        private void MetflixPantallaPrincipal_Load(object sender, EventArgs e)
         {
-            UCPeliculas[] listItem = new UCPeliculas[conn.GetPeliculasVistas(UsuarioActual.Id).Count()];
-            Pelicula[] PeliculasVistas;
-            PeliculasVistas = conn.GetPeliculasVistas(UsuarioActual.Id).ToArray();
-
-            for (int i = 0; i < listItem.Length; i++)
-            {
-
-                //Llenando cada item
-                listItem[i] = new UCPeliculas();
-                listItem[i].Titulo = PeliculasVistas[i].Titulo;
-                //Agregr Calificación
-                listItem[i].Duracion = $"{PeliculasVistas[i].Duracion} min";
-                listItem[i].Genero = PeliculasVistas[i].Genero;
-                listItem[i].Year = $"{PeliculasVistas[i].Year}";
-                listItem[i].PortadaLocation =  PeliculasVistas[i].Imagen;
-                listItem[i].Portada();
-                listItem[i].Sinopsis = PeliculasVistas[i].Sinopsis;
-
-                //Agegando el nuevo item a la pantalla
-
-                flowLayoutPanel1.Controls.Add(listItem[i]);
-
-            }
-
-        } 
+            AbrirForma(new MetflixInicio(UsuarioActual));
+        }
 
         private void btmCerrarSesion_Click(object sender, EventArgs e)
         {
             InicioSesión inicio = new InicioSesión();
+            Cerrar = false;
             inicio.Show();
             Close();
         }
 
+        private void btmInicio_Click(object sender, EventArgs e)
+        {
+            AbrirForma(new MetflixInicio(UsuarioActual));
+        }
 
+        private void btmPeliculas_Click(object sender, EventArgs e)
+        {
+            AbrirForma(new MetflixTodasLasPeliculas());
+        }
+
+        private void btmBuscar_Click(object sender, EventArgs e)
+        {
+            AbrirForma(new Busqueda());
+        }
+
+        private void MetflixPantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Cerrar)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

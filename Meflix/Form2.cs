@@ -15,6 +15,7 @@ namespace Meflix
     public partial class UsuarioAlta : Form
     {
         private SQLiteConn conn;
+        bool Cerrar = true;
 
         public UsuarioAlta()
         {
@@ -65,9 +66,16 @@ namespace Meflix
                         MessageBoxIcon.Information);
                     InicioSesión inicio = new InicioSesión();
                     inicio.Show();
+                    Cerrar = false;
                     Close();
                 }
             }
+        }
+
+        private void UsuarioAlta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Cerrar)
+                Application.Exit();
         }
     }
 }

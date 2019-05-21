@@ -1,9 +1,9 @@
-﻿DROP TABLE IF EXISTS [usuarios];
-DROP TABLE IF EXISTS [membresias];
-DROP TABLE IF EXISTS [generos];
-DROP TABLE IF EXISTS [peliculas];
-DROP TABLE IF EXISTS [registro_peliculas];
+﻿DROP TABLE IF EXISTS [registro_peliculas];
 DROP TABLE IF EXISTS [calificaciones];
+DROP TABLE IF EXISTS [peliculas];
+DROP TABLE IF EXISTS [generos];
+DROP TABLE IF EXISTS [membresias];
+DROP TABLE IF EXISTS [usuarios];
 
 
 CREATE TABLE [usuarios](
@@ -33,7 +33,8 @@ CREATE TABLE [peliculas](
        sinopsis TEXT NOT NULL UNIQUE,
        imagen TEXT NOT NULL UNIQUE,
        clasificacion TEXT NOT NULL,
-       duracion INTEGER NOT NULL); 
+       duracion INTEGER NOT NULL,
+       membresia_id INTEGER NOT NULL REFERENCES membresias([id])); 
        
 CREATE TABLE [registro_peliculas](
        usuario_id INTEGER PRIMARY KEY REFERENCES usuarios([id]),
@@ -63,7 +64,7 @@ INSERT INTO generos (id, descripcion) VALUES (1,'Terror');
 
 --PELICULAS
 INSERT INTO peliculas (codigo, titulo, genero_id, year, sinopsis, imagen, clasificacion,
-duracion) VALUES (1001, 'It', 1, 2017, 'Varios niños de una pequeña ciudad del estado de Maine se alían para combatir a una entidad diabólica que adopta la forma de un payaso y desde hace mucho tiempo emerge cada 27 años para saciarse de sangre infantil.','Imágenes\Portadas\250x300\It.jpg', 'B15', 135);  
+duracion, membresia_id) VALUES (1001, 'It', 1, 2017, 'Varios niños de una pequeña ciudad del estado de Maine se alían para combatir a una entidad diabólica que adopta la forma de un payaso y desde hace mucho tiempo emerge cada 27 años para saciarse de sangre infantil.','C:\\Users\\Sandra\\source\\repos\\Metflix\\Imágenes\Portadas\\250x300\\It.jpg', 'B15', 135, 0);  
 
 --PELICULAS VISTAS
 INSERT INTO registro_peliculas (usuario_id, pelicula_codigo) VALUES (0,1001);
@@ -74,35 +75,106 @@ SELECT * FROM registro_peliculas rs WHERE rs.usuario_id = 0;
 
 --Query para hallar las películas vistas por el usuario
 SELECT pv.codigo AS codigo, pv.titulo AS titulo, pv.sinopsis AS sinopsis,
-g.descripcion AS genero, pv.clasificacion AS clasificacion, 
-pv.duracion AS duracion, pv.imagen AS imagen, pv.year AS year FROM generos g
-INNER JOIN (
+pv.genero AS genero, pv.clasificacion AS clasificacion, 
+pv.duracion AS duracion, pv.imagen AS imagen, pv.year AS year,
+pv.membresia AS membresia
+FROM (
       SELECT p.codigo AS codigo, p.titulo AS titulo, p.sinopsis AS sinopsis,
-      p.genero_id AS genero_id, p.clasificacion AS clasificacion, 
-      p.duracion AS duracion, p.imagen AS imagen, p.year AS year
-      FROM peliculas p
+      p.genero AS genero, p.clasificacion AS clasificacion, 
+      p.duracion AS duracion, p.imagen AS imagen, p.year AS year,
+      m.descripcion AS membresia
+      FROM membresias m
       INNER JOIN (
-              SELECT * FROM registro_peliculas rs WHERE rs.usuario_id = 0 
-              ) rs ON (rs.pelicula_codigo = p.codigo)
-                ) pv ON (pv.genero_id = g.id)
-              
-              
-              
-              
-              
-              
-SELECT pv.codigo AS codigo, pv.titulo AS titulo, pv.sinopsis AS sinopsis,
-                g.descripcion AS genero, pv.clasificacion AS clasificacion,
-                pv.duracion AS duracion, pv.imagen AS imagen, pv.year AS year
-                FROM generos g
-                INNER JOIN(
-                      SELECT p.codigo AS codigo, p.titulo AS titulo, p.sinopsis AS sinopsis, 
-                      p.genero_id AS genero_id, p.clasificacion AS clasificacion, 
-                      p.duracion AS duracion, p.imagen AS imagen, p.year AS year 
-                      FROM peliculas p
-                      INNER JOIN( 
-                              SELECT * FROM registro_peliculas rs WHERE rs.usuario_id = 0
-                              ) rs ON(rs.pelicula_codigo = p.codigo)
-                      ) pv ON(pv.genero_id = g.id)
-    
+            SELECT pg.codigo AS codigo, pg.titulo AS titulo, pg.sinopsis AS sinopsis,
+              g.descripcion AS genero, pg.clasificacion AS clasificacion, 
+              pg.duracion AS duracion, pg.imagen AS imagen, pg.year AS year,
+              pg.membresia_id AS membresia 
+              FROM peliculas pg
+              INNER JOIN generos g ON (g.id = pg.genero_id)
+            ) p ON (p.membresia = m.id)
+     ) pv
+INNER JOIN (
+      SELECT * FROM registro_peliculas r WHERE r.usuario_id = 0
+      ) rs ON(rs.pelicula_codigo = pv.codigo)
 
+
+
+
+
+--Query para hallar pelicula por género
+SELECT p.codigo AS codigo, p.titulo AS titulo, p.sinopsis AS sinopsis,
+p.genero AS genero, p.clasificacion AS clasificacion, 
+p.duracion AS duracion, p.imagen AS imagen, p.year AS year,
+m.descripcion AS membresia
+FROM membresias m
+INNER JOIN (
+              SELECT pg.codigo AS codigo, pg.titulo AS titulo, pg.sinopsis AS sinopsis,
+              g.descripcion AS genero, pg.clasificacion AS clasificacion, 
+              pg.duracion AS duracion, pg.imagen AS imagen, pg.year AS year,
+              pg.membresia_id AS membresia 
+              FROM peliculas pg
+              INNER JOIN generos g ON (g.id = pg.genero_id)
+            ) p ON (p.membresia = m.id)
+GROUP BY p.codigo
+HAVING (p.genero = 'Terror')
+
+--Query para hallar pelicula por año        
+SELECT p.codigo AS codigo, p.titulo AS titulo, p.sinopsis AS sinopsis,
+p.genero AS genero, p.clasificacion AS clasificacion, 
+p.duracion AS duracion, p.imagen AS imagen, p.year AS year,
+m.descripcion AS membresia
+FROM membresias m
+INNER JOIN (
+              SELECT pg.codigo AS codigo, pg.titulo AS titulo, pg.sinopsis AS sinopsis,
+              g.descripcion AS genero, pg.clasificacion AS clasificacion, 
+              pg.duracion AS duracion, pg.imagen AS imagen, pg.year AS year,
+              pg.membresia_id AS membresia 
+              FROM peliculas pg
+              INNER JOIN generos g ON (g.id = pg.genero_id)
+            ) p ON (p.membresia = m.id)
+GROUP BY p.codigo
+HAVING (p.year = 2017)
+
+--Query para hallar pelicula por clasificación 
+SELECT p.codigo AS codigo, p.titulo AS titulo, p.sinopsis AS sinopsis,
+p.genero AS genero, p.clasificacion AS clasificacion, 
+p.duracion AS duracion, p.imagen AS imagen, p.year AS year,
+m.descripcion AS membresia
+FROM membresias m
+INNER JOIN (
+              SELECT pg.codigo AS codigo, pg.titulo AS titulo, pg.sinopsis AS sinopsis,
+              g.descripcion AS genero, pg.clasificacion AS clasificacion, 
+              pg.duracion AS duracion, pg.imagen AS imagen, pg.year AS year,
+              pg.membresia_id AS membresia 
+              FROM peliculas pg
+              INNER JOIN generos g ON (g.id = pg.genero_id)
+            ) p ON (p.membresia = m.id)
+GROUP BY p.codigo
+HAVING (p.clasificacion = 'B15')
+
+--Query para hallar pelicula por tipo de membresia
+SELECT p.codigo AS codigo, p.titulo AS titulo, p.sinopsis AS sinopsis,
+p.genero AS genero, p.clasificacion AS clasificacion, 
+p.duracion AS duracion, p.imagen AS imagen, p.year AS year,
+m.descripcion AS membresia
+FROM membresias m
+INNER JOIN (
+              SELECT pg.codigo AS codigo, pg.titulo AS titulo, pg.sinopsis AS sinopsis,
+              g.descripcion AS genero, pg.clasificacion AS clasificacion, 
+              pg.duracion AS duracion, pg.imagen AS imagen, pg.year AS year,
+              pg.membresia_id AS membresia 
+              FROM peliculas pg
+              INNER JOIN generos g ON (g.id = pg.genero_id)
+            ) p ON (p.membresia = m.id)
+GROUP BY p.codigo
+HAVING (m.descripcion = 'Básica')
+
+
+--Query para sacar años
+SELECT year FROM peliculas;
+
+--Query para scar generos
+SELECT descripcion FROM generos;
+
+--Query para sacar Clasificaciones
+SELECT clasificacion FROM peliculas

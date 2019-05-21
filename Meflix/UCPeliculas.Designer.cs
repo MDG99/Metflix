@@ -36,8 +36,8 @@
             this.labelDuracion = new System.Windows.Forms.Label();
             this.labelCalificacion = new System.Windows.Forms.Label();
             this.txtSinopsis = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btmPlay = new System.Windows.Forms.Button();
+            this.btmReanudarPlay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPortada)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,34 +113,34 @@
             this.txtSinopsis.TabIndex = 6;
             this.txtSinopsis.Text = "Aquí va la sinópsis";
             // 
-            // button1
+            // btmPlay
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(478, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 41);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btmPlay.FlatAppearance.BorderSize = 0;
+            this.btmPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmPlay.Image = ((System.Drawing.Image)(resources.GetObject("btmPlay.Image")));
+            this.btmPlay.Location = new System.Drawing.Point(478, 22);
+            this.btmPlay.Name = "btmPlay";
+            this.btmPlay.Size = new System.Drawing.Size(47, 41);
+            this.btmPlay.TabIndex = 7;
+            this.btmPlay.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btmReanudarPlay
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(478, 60);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(47, 41);
-            this.button2.TabIndex = 8;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btmReanudarPlay.FlatAppearance.BorderSize = 0;
+            this.btmReanudarPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmReanudarPlay.Image = ((System.Drawing.Image)(resources.GetObject("btmReanudarPlay.Image")));
+            this.btmReanudarPlay.Location = new System.Drawing.Point(478, 60);
+            this.btmReanudarPlay.Name = "btmReanudarPlay";
+            this.btmReanudarPlay.Size = new System.Drawing.Size(47, 41);
+            this.btmReanudarPlay.TabIndex = 8;
+            this.btmReanudarPlay.UseVisualStyleBackColor = true;
             // 
             // UCPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btmReanudarPlay);
+            this.Controls.Add(this.btmPlay);
             this.Controls.Add(this.txtSinopsis);
             this.Controls.Add(this.labelCalificacion);
             this.Controls.Add(this.labelDuracion);
@@ -165,7 +165,7 @@
         private System.Windows.Forms.Label labelDuracion;
         private System.Windows.Forms.Label labelCalificacion;
         private System.Windows.Forms.TextBox txtSinopsis;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btmPlay;
+        private System.Windows.Forms.Button btmReanudarPlay;
     }
 }

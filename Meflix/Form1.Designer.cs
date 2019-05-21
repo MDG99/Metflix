@@ -150,6 +150,7 @@
             this.Name = "InicioSesión";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Métflix.- Inicio de sesión";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InicioSesión_FormClosing);
             transparentControl1.ResumeLayout(false);
             transparentControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

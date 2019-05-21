@@ -37,10 +37,12 @@ namespace Meflix
         public string Clasificacion { get; }
         public int Duracion { get; }
         public string Imagen { get; }
+        public string Membresia { get; }
 
         public Pelicula(int codigo, string titulo,
             string genero, int year, string sinopsis, 
-            string clasificacion, int duracion, string imagen)
+            string clasificacion, int duracion, string imagen, 
+            string membresia)
         {
             Codigo = codigo;
             Titulo = titulo;
@@ -50,6 +52,7 @@ namespace Meflix
             Clasificacion = clasificacion;
             Duracion = duracion;
             Imagen = imagen;
+            Membresia = membresia;
         }
     }
 }
