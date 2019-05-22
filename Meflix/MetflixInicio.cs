@@ -27,7 +27,7 @@ namespace Meflix
             Items();
             if(flowLayoutPanel1.Controls.Count == 0)
             {
-                NoResultados.Enabled = true;
+                NoResultados.Visible = true;
             }
         }
 

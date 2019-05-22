@@ -61,7 +61,7 @@ namespace Meflix
 
         private void btmBuscar_Click(object sender, EventArgs e)
         {
-            AbrirForma(new Busqueda());
+            AbrirForma(new Busqueda(UsuarioActual));
         }
 
         private void MetflixPantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)

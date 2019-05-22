@@ -127,7 +127,7 @@ namespace SQLiteDb
                 $"            ) p ON(p.membresia = m.id) " +
                 $"     ) pv " +
                 $"        INNER JOIN( " +
-                $"              SELECT * FROM registro_peliculas r WHERE r.usuario_id = 0 " +
+                $"              SELECT * FROM registro_peliculas r WHERE r.usuario_id = {UsuarioId} " +
                 $"     ) rs ON(rs.pelicula_codigo = pv.codigo) "))
             {
                 while (rs2.NextRecord())

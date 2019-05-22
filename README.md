@@ -25,3 +25,5 @@ agregar más peliculas
 Checar como hacer para que las imágenes se puedan abrir desde cualquier computadora (puede ser por internet)
 Checar todo el apartado de configurción de usuario
 Checar los colores
+Checkbx premium solo aparecer cuando el usuario sea premium
+Checar las peliculas vistas

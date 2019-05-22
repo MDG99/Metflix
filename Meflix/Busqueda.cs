@@ -14,10 +14,17 @@ namespace Meflix
     public partial class Busqueda : Form
     {
         SQLiteConn conn = new SQLiteConn("Metflix.db", true);
+        Usuario u;
 
-        public Busqueda()
+        public Busqueda(Usuario user)
         {
+            u = user;
             InitializeComponent();
+            if (u.MembresiaId != 1)
+            {
+                checkPremium.Visible = false;
+                checkPremium.Enabled = false;
+            }
         }
 
         public void MostrarPeliculas(Pelicula[] peliculasfiltradas)
