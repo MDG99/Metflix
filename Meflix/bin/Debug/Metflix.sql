@@ -1,4 +1,6 @@
-﻿DROP TABLE IF EXISTS [registro_peliculas];
+﻿
+
+DROP TABLE IF EXISTS [registro_peliculas];
 DROP TABLE IF EXISTS [calificaciones];
 DROP TABLE IF EXISTS [peliculas];
 DROP TABLE IF EXISTS [generos];
@@ -42,8 +44,7 @@ CREATE TABLE [registro_peliculas](
        UNIQUE ([usuario_id], [pelicula_codigo]));
        
 CREATE TABLE [calificaciones] (
-       estatus INTEGER NOT NULL,
-       puntaje INTEGER,
+       puntaje REAL,
        opinion TEXT,
        usuario_id INTEGER NOT NULL,
        pelicula_codigo INTEGER NOT NULL,

@@ -14,6 +14,8 @@ Ver que onda con el Id numérico de usuarios, ¿qué pasa si se borra un usuario?
 Falta modificar la calificacion
 Habilitar o deshabilitar el botón de reanudar si es que no has terminado de ver la pelicula
 Falta hacer el menú
+Poner animaciones de transición
+Checar el método para obtener la calificación promedio
 
 Mejorar los combobox de la búsqueda personalizada
 Agregar la búsqueda por Calificaciones

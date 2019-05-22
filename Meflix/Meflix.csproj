@@ -92,6 +92,18 @@
     <Compile Include="MetflixTodasLasPeliculas.Designer.cs">
       <DependentUpon>MetflixTodasLasPeliculas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Opiniones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opiniones.Designer.cs">
+      <DependentUpon>Opiniones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PeliculaEmergente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeliculaEmergente.Designer.cs">
+      <DependentUpon>PeliculaEmergente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLiteDb.cs" />
@@ -119,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MetflixTodasLasPeliculas.resx">
       <DependentUpon>MetflixTodasLasPeliculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opiniones.resx">
+      <DependentUpon>Opiniones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeliculaEmergente.resx">
+      <DependentUpon>PeliculaEmergente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

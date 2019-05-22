@@ -25,4 +25,6 @@ C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.UCPeliculas.resourc
 C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.MetflixInicio.resources
 C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.MetflixTodasLasPeliculas.resources
 C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.Busqueda.resources
+C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.Opiniones.resources
+C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.PeliculaEmergente.resources
 C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.csprojResolveAssemblyReference.cache

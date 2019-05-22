@@ -181,7 +181,47 @@ namespace SQLiteDb
                 $"'{membresia_id}','{Hoy.ToString("yyyy-MM-dd")}')")) { }
         }
 
+        public double avgcalificacion(int id)
+        {
+            double calificacion = -1;
+            using (SQLiteRecordSet rs = ExecuteQuery($"SELECT AVG(puntaje) FROM calificaciones WHERE pelicula_codigo" +
+                $" = {id}"))
+            {
+                while (rs.NextRecord())
+                {
+                    if (!rs.IsNull("AVG(puntaje)"))
+                        calificacion = rs.GetDouble("AVG(puntaje)");
+                }
 
+            }
+            return calificacion;
+        }
+
+        public List<Pelicula> calificacionfiltro(int puntaje)
+        {
+            List<Pelicula> Peliculas = new List<Pelicula>();
+            using (SQLiteRecordSet rs2 = ExecuteQuery($"SELECT *, AVG(puntaje) " +
+                $"FROM calificaciones c " +
+                $"INNER JOIN peliculas p ON(c.pelicula_codigo = p.codigo) " +
+                $"GROUP BY p.codigo, c.pelicula_codigo" +
+                $"HAVING puntaje >= {puntaje}"))
+            {
+                while (rs2.NextRecord())
+                {
+                    Peliculas.Add(new Pelicula(rs2.GetInt32("codigo"),
+                        rs2.GetString("titulo"),
+                        rs2.GetString("genero"),
+                        rs2.GetInt32("year"),
+                        rs2.GetString("sinopsis"),
+                        rs2.GetString("clasificacion"),
+                        rs2.GetInt32("duracion"),
+                        rs2.GetString("imagen"),
+                        rs2.GetString("membresia")));
+                }
+
+            }
+            return Peliculas;
+        }
     }
 
 

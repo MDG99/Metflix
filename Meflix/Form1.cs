@@ -97,6 +97,7 @@ namespace Meflix
         {
             UsuarioAlta usuarioAlta = new UsuarioAlta();
             usuarioAlta.Show();
+            Cerrar = false;
             Close();
         }
 

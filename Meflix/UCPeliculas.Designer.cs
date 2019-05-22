@@ -36,13 +36,12 @@
             this.labelDuracion = new System.Windows.Forms.Label();
             this.labelCalificacion = new System.Windows.Forms.Label();
             this.txtSinopsis = new System.Windows.Forms.TextBox();
-            this.btmPlay = new System.Windows.Forms.Button();
-            this.btmReanudarPlay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPortada)).BeginInit();
             this.SuspendLayout();
             // 
             // pbPortada
             // 
+            this.pbPortada.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPortada.Image = ((System.Drawing.Image)(resources.GetObject("pbPortada.Image")));
             this.pbPortada.Location = new System.Drawing.Point(20, 22);
             this.pbPortada.Name = "pbPortada";
@@ -50,6 +49,7 @@
             this.pbPortada.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPortada.TabIndex = 0;
             this.pbPortada.TabStop = false;
+            this.pbPortada.Click += new System.EventHandler(this.txtSinopsis_Click);
             // 
             // labelGenero
             // 
@@ -60,6 +60,7 @@
             this.labelGenero.Size = new System.Drawing.Size(51, 17);
             this.labelGenero.TabIndex = 1;
             this.labelGenero.Text = "Género";
+            this.labelGenero.Click += new System.EventHandler(this.txtSinopsis_Click);
             // 
             // labelYear
             // 
@@ -70,16 +71,19 @@
             this.labelYear.Size = new System.Drawing.Size(31, 17);
             this.labelYear.TabIndex = 2;
             this.labelYear.Text = "Año";
+            this.labelYear.Click += new System.EventHandler(this.txtSinopsis_Click);
             // 
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
+            this.labelTitulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelTitulo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.Location = new System.Drawing.Point(140, 21);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(64, 25);
             this.labelTitulo.TabIndex = 3;
             this.labelTitulo.Text = "Título";
+            this.labelTitulo.Click += new System.EventHandler(this.txtSinopsis_Click);
             // 
             // labelDuracion
             // 
@@ -90,6 +94,7 @@
             this.labelDuracion.Size = new System.Drawing.Size(60, 17);
             this.labelDuracion.TabIndex = 4;
             this.labelDuracion.Text = "Duracion";
+            this.labelDuracion.Click += new System.EventHandler(this.txtSinopsis_Click);
             // 
             // labelCalificacion
             // 
@@ -100,11 +105,13 @@
             this.labelCalificacion.Size = new System.Drawing.Size(99, 17);
             this.labelCalificacion.TabIndex = 5;
             this.labelCalificacion.Text = "Calificación: 5/5";
+            this.labelCalificacion.Click += new System.EventHandler(this.txtSinopsis_Click);
             // 
             // txtSinopsis
             // 
             this.txtSinopsis.BackColor = System.Drawing.SystemColors.Control;
             this.txtSinopsis.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSinopsis.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtSinopsis.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSinopsis.Location = new System.Drawing.Point(147, 104);
             this.txtSinopsis.Multiline = true;
@@ -113,34 +120,10 @@
             this.txtSinopsis.TabIndex = 6;
             this.txtSinopsis.Text = "Aquí va la sinópsis";
             // 
-            // btmPlay
-            // 
-            this.btmPlay.FlatAppearance.BorderSize = 0;
-            this.btmPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btmPlay.Image = ((System.Drawing.Image)(resources.GetObject("btmPlay.Image")));
-            this.btmPlay.Location = new System.Drawing.Point(478, 22);
-            this.btmPlay.Name = "btmPlay";
-            this.btmPlay.Size = new System.Drawing.Size(47, 41);
-            this.btmPlay.TabIndex = 7;
-            this.btmPlay.UseVisualStyleBackColor = true;
-            // 
-            // btmReanudarPlay
-            // 
-            this.btmReanudarPlay.FlatAppearance.BorderSize = 0;
-            this.btmReanudarPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btmReanudarPlay.Image = ((System.Drawing.Image)(resources.GetObject("btmReanudarPlay.Image")));
-            this.btmReanudarPlay.Location = new System.Drawing.Point(478, 60);
-            this.btmReanudarPlay.Name = "btmReanudarPlay";
-            this.btmReanudarPlay.Size = new System.Drawing.Size(47, 41);
-            this.btmReanudarPlay.TabIndex = 8;
-            this.btmReanudarPlay.UseVisualStyleBackColor = true;
-            // 
             // UCPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btmReanudarPlay);
-            this.Controls.Add(this.btmPlay);
             this.Controls.Add(this.txtSinopsis);
             this.Controls.Add(this.labelCalificacion);
             this.Controls.Add(this.labelDuracion);
@@ -150,6 +133,7 @@
             this.Controls.Add(this.pbPortada);
             this.Name = "UCPeliculas";
             this.Size = new System.Drawing.Size(550, 200);
+            this.Click += new System.EventHandler(this.txtSinopsis_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pbPortada)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,7 +149,5 @@
         private System.Windows.Forms.Label labelDuracion;
         private System.Windows.Forms.Label labelCalificacion;
         private System.Windows.Forms.TextBox txtSinopsis;
-        private System.Windows.Forms.Button btmPlay;
-        private System.Windows.Forms.Button btmReanudarPlay;
     }
 }
