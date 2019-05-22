@@ -26,3 +26,27 @@ C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.MetflixInicio.resou
 C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.MetflixTodasLasPeliculas.resources
 C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.Busqueda.resources
 C:\Users\Sandra\source\repos\Metflix\Meflix\obj\Debug\Meflix.csprojResolveAssemblyReference.cache
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\bin\Debug\Meflix.exe.config
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\bin\Debug\Meflix.exe
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\bin\Debug\Meflix.pdb
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\bin\Debug\Interop.WMPLib.dll
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.csprojAssemblyReference.cache
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Interop.WMPLib.dll
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.csproj.ResolveComReference.cache
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.Busqueda.resources
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.InicioSesión.resources
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.UsuarioAlta.resources
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.MetflixInicio.resources
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.MetflixPantallaPrincipal.resources
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.MetflixReproducir.resources
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.MetflixTodasLasPeliculas.resources
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.Properties.Resources.resources
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.UCPeliculas.resources
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.csproj.GenerateResource.cache
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.csproj.CoreCompileInputs.cache
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.csproj.CopyComplete
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.exe
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.pdb
+C:\Users\Alfon\OneDrive\Documentos\Ingeniería en Mecatrónica\4o Semestre\Programación Orientada a Objetos\Metflix\Meflix\obj\Debug\Meflix.MetflixAgregar.resources
