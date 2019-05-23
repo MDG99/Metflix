@@ -89,7 +89,6 @@
             this.bttnstop.BackColor = System.Drawing.Color.White;
             this.bttnstop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnstop.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.bttnstop.Image = global::Meflix.Properties.Resources.Stop;
             this.bttnstop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bttnstop.Location = new System.Drawing.Point(101, 491);
             this.bttnstop.Name = "bttnstop";
@@ -105,7 +104,6 @@
             this.bttnplay.BackColor = System.Drawing.Color.White;
             this.bttnplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnplay.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bttnplay.Image = global::Meflix.Properties.Resources.Play;
             this.bttnplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bttnplay.Location = new System.Drawing.Point(20, 485);
             this.bttnplay.Name = "bttnplay";
@@ -119,7 +117,6 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.BackgroundImage = global::Meflix.Properties.Resources.metflix;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Help;
             this.pictureBox1.Location = new System.Drawing.Point(50, 50);
@@ -134,9 +131,8 @@
             this.bttnpause.Enabled = false;
             this.bttnpause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnpause.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bttnpause.Image = global::Meflix.Properties.Resources.Pausa;
             this.bttnpause.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bttnpause.Location = new System.Drawing.Point(184, 485);
+            this.bttnpause.Location = new System.Drawing.Point(20, 426);
             this.bttnpause.Name = "bttnpause";
             this.bttnpause.Size = new System.Drawing.Size(75, 42);
             this.bttnpause.TabIndex = 6;
