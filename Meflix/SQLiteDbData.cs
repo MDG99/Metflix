@@ -30,6 +30,26 @@ namespace SQLiteDb
             return usuarios;
         }
 
+        public List<string> GetMembresias()
+        {
+            List<string> membresias = new List<string>();
+            using (SQLiteRecordSet rs = ExecuteQuery("SELECT * FROM membresias"))
+            {
+                while (rs.NextRecord())
+                {
+                    membresias.Add(rs.GetString("descripcion"));
+                }
+            }
+
+            return membresias;
+        }
+
+        public void AddPelicula(int codigo, string titulo, string genero, int año, string sinopsis, string imagen, string clasificacion, int duracion, int membresia)
+        {
+            using (SQLiteRecordSet rs = ExecuteQuery($"INSERT INTO peliculas (codigo, titulo, genero_id, year, sinopsis, imagen, clasificacion, duracion, membresia_id)" +
+                $" VALUES ({codigo}, '{titulo}', {genero}, {año}, '{sinopsis}', '{imagen}', '{clasificacion}', {duracion}, {membresia})")) { }
+        }
+
         public List<int> Getyears()
         {
             List<int> years = new List<int>();
@@ -51,6 +71,19 @@ namespace SQLiteDb
                 while (rs.NextRecord())
                 {
                     generos.Add(rs.GetString("descripcion"));
+                }
+            }
+            return generos;
+        }
+
+        public List<Genero> GetGenerosID()
+        {
+            List<Genero> generos = new List<Genero>();
+            using (SQLiteRecordSet rs = ExecuteQuery("SELECT * FROM generos"))
+            {
+                while (rs.NextRecord())
+                {
+                   generos.Add(new Genero (rs.GetInt32("id"), rs.GetString("descripcion")));
                 }
             }
             return generos;
@@ -127,7 +160,7 @@ namespace SQLiteDb
                 $"            ) p ON(p.membresia = m.id) " +
                 $"     ) pv " +
                 $"        INNER JOIN( " +
-                $"              SELECT * FROM registro_peliculas r WHERE r.usuario_id = 0 " +
+                $"              SELECT * FROM registro_peliculas r WHERE r.usuario_id = {UsuarioId} " +
                 $"     ) rs ON(rs.pelicula_codigo = pv.codigo) "))
             {
                 while (rs2.NextRecord())
@@ -181,7 +214,47 @@ namespace SQLiteDb
                 $"'{membresia_id}','{Hoy.ToString("yyyy-MM-dd")}')")) { }
         }
 
+        public double avgcalificacion(int id)
+        {
+            double calificacion = -1;
+            using (SQLiteRecordSet rs = ExecuteQuery($"SELECT AVG(puntaje) FROM calificaciones WHERE pelicula_codigo" +
+                $" = {id}"))
+            {
+                while (rs.NextRecord())
+                {
+                    if (!rs.IsNull("AVG(puntaje)"))
+                        calificacion = rs.GetDouble("AVG(puntaje)");
+                }
 
+            }
+            return calificacion;
+        }
+
+        public List<Pelicula> calificacionfiltro(int puntaje)
+        {
+            List<Pelicula> Peliculas = new List<Pelicula>();
+            using (SQLiteRecordSet rs2 = ExecuteQuery($"SELECT *, AVG(puntaje) " +
+                $"FROM calificaciones c " +
+                $"INNER JOIN peliculas p ON(c.pelicula_codigo = p.codigo) " +
+                $"GROUP BY p.codigo, c.pelicula_codigo" +
+                $"HAVING puntaje >= {puntaje}"))
+            {
+                while (rs2.NextRecord())
+                {
+                    Peliculas.Add(new Pelicula(rs2.GetInt32("codigo"),
+                        rs2.GetString("titulo"),
+                        rs2.GetString("genero"),
+                        rs2.GetInt32("year"),
+                        rs2.GetString("sinopsis"),
+                        rs2.GetString("clasificacion"),
+                        rs2.GetInt32("duracion"),
+                        rs2.GetString("imagen"),
+                        rs2.GetString("membresia")));
+                }
+
+            }
+            return Peliculas;
+        }
     }
 
 

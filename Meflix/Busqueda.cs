@@ -14,10 +14,17 @@ namespace Meflix
     public partial class Busqueda : Form
     {
         SQLiteConn conn = new SQLiteConn("Metflix.db", true);
+        Usuario u;
 
-        public Busqueda()
+        public Busqueda(Usuario user)
         {
+            u = user;
             InitializeComponent();
+            if (u.MembresiaId != 1)
+            {
+                checkPremium.Visible = false;
+                checkPremium.Enabled = false;
+            }
         }
 
         public void MostrarPeliculas(Pelicula[] peliculasfiltradas)
@@ -31,7 +38,9 @@ namespace Meflix
                 //Llenando cada item
                 listItem[i] = new UCPeliculas();
                 listItem[i].Titulo = peliculasfiltradas[i].Titulo;
-                //Agregr Calificación
+                if (conn.avgcalificacion(peliculasfiltradas[i].Codigo) != -1)
+                    listItem[i].Calificacion = $"Calificación: {conn.avgcalificacion(peliculasfiltradas[i].Codigo)}/5";
+                else listItem[i].Calificacion = "Película no calificada aún";
                 listItem[i].Duracion = $"{peliculasfiltradas[i].Duracion} min";
                 listItem[i].Genero = peliculasfiltradas[i].Genero;
                 listItem[i].Year = $"{peliculasfiltradas[i].Year}";
@@ -59,7 +68,14 @@ namespace Meflix
                     TextBox textbox = control as TextBox;
                     if (textbox.Text != "")
                     {
-                        peliculas.FindAll(T => T.Titulo.Contains(txtPalabras.Text));
+                        List<Pelicula> peliculasAux = new List<Pelicula>(peliculas);
+                        foreach (Pelicula peli in peliculasAux)
+                        {
+                            if (peli.Titulo.Contains(txtPalabras.Text)==false)
+                            {
+                                peliculas.Remove(peli);
+                            }
+                        }
                     }
                 }
                 if (control is CheckBox)
@@ -97,24 +113,47 @@ namespace Meflix
                         }
                     }
                 }
+                if (control is RadioButton)
+                {
+                    RadioButton rb = control as RadioButton;
+
+                    if(rb.Checked && rb.Name == "rbtm1Estrella")
+                        peliculas = conn.calificacionfiltro(1);
+
+                    if (rb.Checked && rb.Name == "rbtm2Estrellas")
+                        peliculas = conn.calificacionfiltro(2);
+
+                    if (rb.Checked && rb.Name == "rbtm3Estrellas")
+                        peliculas = conn.calificacionfiltro(3);
+
+                    if (rb.Checked && rb.Name == "rbtm4Estrellas")
+                        peliculas = conn.calificacionfiltro(4);
+
+                    if (rb.Checked && rb.Name == "rbtm5Estrellas")
+                        peliculas = conn.calificacionfiltro(5);
+                }
             }
 
-            //if (control is Panel) //Método para filtrar por calificacion
-
-
-            if (peliculas.ToArray().Length == 0)
-            {
+            if (peliculas.Count == 0)
                 NoResultados.Visible = true;
-            }
+
             MostrarPeliculas(peliculas.ToArray());
         }
 
         private void btmLimpiar_Click_1(object sender, EventArgs e)
         {
-            var resultadoCorrecto = MessageBox.Show("Logueado con Éxito",
-"Inicio de sesión",
-MessageBoxButtons.OK,
-MessageBoxIcon.Information);
+            txtPalabras.Text = "";
+            cmbGeneros.Text = "   Género";
+            cmbClasificacion.Text = " Clasificación";
+            cmbYear.Text = "  Año";
+            checkPremium.Checked = false;
+            rbtm1Estrella.Checked = false;
+            rbtm2Estrellas.Checked = false;
+            rbtm3Estrellas.Checked = false;
+            rbtm4Estrellas.Checked = false;
+            rbtm5Estrellas.Checked = false;
+            flowLayoutPanel1.Controls.Clear();
+            NoResultados.Visible = false;
         }
 
         private void cmbYear_Click_1(object sender, EventArgs e)

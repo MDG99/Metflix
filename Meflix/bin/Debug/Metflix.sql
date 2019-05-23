@@ -117,6 +117,8 @@ INSERT INTO registro_peliculas (usuario_id, pelicula_codigo) VALUES (0,1001);
 
 SELECT * FROM registro_peliculas rs WHERE rs.usuario_id = 0;
 
+SELECT * FROM membresias;
+
 --Query para hallar las películas vistas por el usuario
 SELECT pv.codigo AS codigo, pv.titulo AS titulo, pv.sinopsis AS sinopsis,
 pv.genero AS genero, pv.clasificacion AS clasificacion, 

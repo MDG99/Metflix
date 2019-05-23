@@ -37,7 +37,9 @@ namespace Meflix
                 //Llenando cada item
                 listItem[i] = new UCPeliculas();
                 listItem[i].Titulo = Peliculas[i].Titulo;
-                //Agregr Calificación
+                if (conn.avgcalificacion(Peliculas[i].Codigo) != -1)
+                    listItem[i].Calificacion = $"Calificación: {conn.avgcalificacion(Peliculas[i].Codigo)}/5";
+                else listItem[i].Calificacion = "Película no calificada aún";
                 listItem[i].Duracion = $"{Peliculas[i].Duracion} min";
                 listItem[i].Genero = Peliculas[i].Genero;
                 listItem[i].Year = $"{Peliculas[i].Year}";

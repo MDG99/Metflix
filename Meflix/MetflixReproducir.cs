@@ -13,41 +13,53 @@ namespace Meflix
 {
     public partial class MetflixReproducir : Form
     {
-        public MetflixReproducir()
-        {
-            InitializeComponent();
-            //timer1.Interval = duracion * 1000;
-        }
 
-        private void bttnpp_Click(object sender, EventArgs e)
+        private SQLiteConn conn = new SQLiteConn("Metflix.db", true);
+        int PeliId;
+        int duracion;
+        int ttranscurrido = 0;
+
+        public MetflixReproducir(int id)
         {
-            if (timer1.Enabled is false)
-            {
-                bttnpp.Text = "Stop";
-                //bttnpp.Image
-                //pictureBox1.
-                label2.Visible = true;
-                timer1.Start();
-            }
-            else if (timer1.Enabled is true)
-            {
-                bttnpp.Text = "Play";
-                //bttnpp.Image
-                timer1.Stop();
-            }
+            PeliId = id;
+            InitializeComponent();
+
+            duracion = conn.GetPeliculas().Find(P => P.Codigo == PeliId).Duracion;
+
+            timer1.Interval = duracion * 10;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            ttranscurrido += timer1.Interval;
+
             progressBar1.Increment(1);
-            label1.Text = $"Minuto {progressBar1.Value}";
-            label2.Text = $"{100 - progressBar1.Value} minutos restantes";
+            label1.Text = $"Minuto {ttranscurrido}";
+            label2.Text = $"{duracion - ttranscurrido} minutos restantes";
         }
 
         private void bttnstop_Click(object sender, EventArgs e)
         {
-            //progressBar1.Value = ;
             timer1.Stop();
+        }
+
+        private void bttnplay_Click(object sender, EventArgs e)
+        {
+            label2.Visible = true;
+            timer1.Start();
+            bttnplay.Enabled = false;
+            bttnplay.Visible = false;
+            bttnpause.Enabled = true;
+            bttnpause.Visible = true;
+        }
+
+        private void bttnpause_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            bttnpause.Enabled = false;
+            bttnpause.Visible = false;
+            bttnplay.Enabled = true;
+            bttnplay.Visible = true;
         }
     }
 }

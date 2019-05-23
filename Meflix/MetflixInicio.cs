@@ -25,6 +25,10 @@ namespace Meflix
         private void MetflixInicio_Load(object sender, EventArgs e)
         {
             Items();
+            if(flowLayoutPanel1.Controls.Count == 0)
+            {
+                NoResultados.Visible = true;
+            }
         }
 
 
@@ -40,7 +44,9 @@ namespace Meflix
                 //Llenando cada item
                 listItem[i] = new UCPeliculas();
                 listItem[i].Titulo = PeliculasVistas[i].Titulo;
-                //Agregr Calificación
+                if (conn.avgcalificacion(PeliculasVistas[i].Codigo) != -1)
+                    listItem[i].Calificacion = $"Calificación: {conn.avgcalificacion(PeliculasVistas[i].Codigo)}/5";
+                else listItem[i].Calificacion = "Película no calificada aún";
                 listItem[i].Duracion = $"{PeliculasVistas[i].Duracion} min";
                 listItem[i].Genero = PeliculasVistas[i].Genero;
                 listItem[i].Year = $"{PeliculasVistas[i].Year}";
@@ -54,7 +60,7 @@ namespace Meflix
 
             }
 
-        } 
+        }
 
     }
 }

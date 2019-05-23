@@ -55,4 +55,16 @@ namespace Meflix
             Membresia = membresia;
         }
     }
+
+    public sealed class Genero
+    {
+        public string ID { get; }
+        public string Descripcion { get; }
+
+        public Genero(string id, string descripcion)
+        {
+            ID = id;
+            Descripcion = descripcion;
+        }
+    }
 }

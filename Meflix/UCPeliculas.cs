@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SQLiteDb;
 
 namespace Meflix
 {
     public partial class UCPeliculas : UserControl
     {
+        private SQLiteConn conn = new SQLiteConn("Metflix.db", true);
+
         public UCPeliculas()
         {
             InitializeComponent();
@@ -67,5 +70,10 @@ namespace Meflix
             pbPortada.ImageLocation = PortadaLocation;
         }
 
+        private void txtSinopsis_Click(object sender, EventArgs e)
+        {
+            PeliculaEmergente peliculaEmergente = new PeliculaEmergente(conn.GetPeliculas().Find(P => P.Titulo == labelTitulo.Text));
+            peliculaEmergente.Show();
+        }
     }
 }
